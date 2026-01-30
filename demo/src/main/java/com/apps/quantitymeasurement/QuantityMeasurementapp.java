@@ -1,10 +1,10 @@
-package com.example;
+package com.apps.quantitymeasurement;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class QuantityMeasurementapp 
 {
     public static void main( String[] args )
     {
