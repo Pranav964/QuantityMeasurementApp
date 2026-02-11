@@ -106,6 +106,19 @@ public class Length {
     public LengthUnit getUnit() {
         return unit;
     }
+     //UC4
+    //METHOD TO ADD TWO LENGTHS and return result in specified unit of first length
+    public Length add(Length thatLength)
+    {
+        if(thatLength == null)
+        {
+            throw new IllegalArgumentException("Cannot add null Length");
+        }
+        double sumInBaseUnit = this.convertToBaseUnit() + thatLength.convertToBaseUnit();
+        double sumInThisUnit = sumInBaseUnit / this.unit.getConversionFactor();
+        return new Length(round(sumInThisUnit), this.unit);
+    }
+
 
     //standalone testing
     // public static void main(String[] args) {

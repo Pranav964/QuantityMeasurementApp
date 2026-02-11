@@ -404,4 +404,181 @@ public class QuantityMeasurementAppTest {
         Length actualLengthInInches = lengthInFeet.convertTo(LengthUnit.INCHES);
         assertTrue(Math.abs(actualLengthInInches.getValue() - expectedLengthInInches.getValue()) < 0.01);
     }
+
+    //UC-6 Test Cases for Addition Operations
+    
+    // 1. Same Unit Addition
+    @Test
+    public void testAddition_SameUnit_FeetPlusFeet() {
+        Length length1 = new Length(2.0, LengthUnit.FEET);
+        Length length2 = new Length(3.0, LengthUnit.FEET);
+        Length result = length1.add(length2);
+        Length expected = new Length(5.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_SameUnit_InchPlusInch() {
+        Length length1 = new Length(12.0, LengthUnit.INCHES);
+        Length length2 = new Length(6.0, LengthUnit.INCHES);
+        Length result = length1.add(length2);
+        Length expected = new Length(18.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    // 2. Cross Unit Addition
+    @Test
+    public void testAddition_CrossUnit_FeetPlusInches() {
+        Length lengthInFeet = new Length(1.0, LengthUnit.FEET);
+        Length lengthInInches = new Length(6.0, LengthUnit.INCHES);
+        Length result = lengthInFeet.add(lengthInInches);
+        Length expected = new Length(18.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_CrossUnit_InchesPlusFeet() {
+        Length lengthInInches = new Length(12.0, LengthUnit.INCHES);
+        Length lengthInFeet = new Length(2.0, LengthUnit.FEET);
+        Length result = lengthInInches.add(lengthInFeet);
+        Length expected = new Length(36.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    // 3. Result Precision
+    @Test
+    public void testAddition_ResultPrecision_DecimalValues() {
+        Length length1 = new Length(1.5, LengthUnit.FEET);
+        Length length2 = new Length(2.5, LengthUnit.FEET);
+        Length result = length1.add(length2);
+        Length expected = new Length(4.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ResultPrecision_CrossUnitDecimal() {
+        Length lengthInFeet = new Length(0.5, LengthUnit.FEET);
+        Length lengthInInches = new Length(6.0, LengthUnit.INCHES);
+        Length result = lengthInFeet.add(lengthInInches);
+        Length expected = new Length(12.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    // 4. Commutativity (a + b = b + a)
+    @Test
+    public void testAddition_Commutativity_FeetAndInches() {
+        Length length1 = new Length(2.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        
+        Length result1 = length1.add(length2);
+        Length result2 = length2.add(length1);
+        
+        assertTrue(result1.equals(result2));
+    }
+
+    @Test
+    public void testAddition_Commutativity_SameUnit() {
+        Length length1 = new Length(3.0, LengthUnit.FEET);
+        Length length2 = new Length(5.0, LengthUnit.FEET);
+        
+        Length result1 = length1.add(length2);
+        Length result2 = length2.add(length1);
+        
+        assertTrue(result1.equals(result2));
+    }
+
+    // 5. Identity Element (a + 0 = a)
+    @Test
+    public void testAddition_IdentityElement_FeetPlusZero() {
+        Length length = new Length(5.0, LengthUnit.FEET);
+        Length zero = new Length(0.0, LengthUnit.FEET);
+        Length result = length.add(zero);
+        assertTrue(result.equals(length));
+    }
+
+    @Test
+    public void testAddition_IdentityElement_InchPlusZero() {
+        Length length = new Length(10.0, LengthUnit.INCHES);
+        Length zero = new Length(0.0, LengthUnit.INCHES);
+        Length result = length.add(zero);
+        assertTrue(result.equals(length));
+    }
+
+    @Test
+    public void testAddition_IdentityElement_ZeroPlusFeet() {
+        Length zero = new Length(0.0, LengthUnit.FEET);
+        Length length = new Length(7.0, LengthUnit.FEET);
+        Length result = zero.add(length);
+        assertTrue(result.equals(length));
+    }
+
+    // 6. Unit Consistency
+    @Test
+    public void testAddition_UnitConsistency_ResultInFirstUnit() {
+        Length lengthInFeet = new Length(2.0, LengthUnit.FEET);
+        Length lengthInInches = new Length(12.0, LengthUnit.INCHES);
+        Length result = lengthInFeet.add(lengthInInches);
+        assertTrue(result.getUnit() == LengthUnit.FEET);
+    }
+
+    @Test
+    public void testAddition_UnitConsistency_SameUnitPreserved() {
+        Length length1 = new Length(4.0, LengthUnit.FEET);
+        Length length2 = new Length(3.0, LengthUnit.FEET);
+        Length result = length1.add(length2);
+        assertTrue(result.getUnit() == LengthUnit.FEET);
+    }
+
+    // 7. Null and Invalid Handling
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddition_NullHandling_AddNullLength() {
+        Length length = new Length(5.0, LengthUnit.FEET);
+        length.add(null);
+    }
+
+    @Test
+    public void testAddition_InvalidValue_LargeResult() {
+        Length length1 = new Length(1000000.0, LengthUnit.FEET);
+        Length length2 = new Length(2000000.0, LengthUnit.FEET);
+        Length result = length1.add(length2);
+        Length expected = new Length(3000000.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    // 8. Large and Small Values
+    @Test
+    public void testAddition_LargeValues_FeetAddition() {
+        Length length1 = new Length(1000000.0, LengthUnit.FEET);
+        Length length2 = new Length(500000.0, LengthUnit.FEET);
+        Length result = length1.add(length2);
+        Length expected = new Length(1500000.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_SmallValues_InchAddition() {
+        Length length1 = new Length(0.5, LengthUnit.INCHES);
+        Length length2 = new Length(0.25, LengthUnit.INCHES);
+        Length result = length1.add(length2);
+        Length expected = new Length(0.75, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_LargeAndSmall_CrossUnit() {
+        Length lengthInFeet = new Length(1000.0, LengthUnit.FEET);
+        Length lengthInInches = new Length(6.0, LengthUnit.INCHES);
+        Length result = lengthInFeet.add(lengthInInches);
+        Length expected = new Length(1000.5, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_VerySmallValues_Precision() {
+        Length length1 = new Length(0.01, LengthUnit.FEET);
+        Length length2 = new Length(0.02, LengthUnit.FEET);
+        Length result = length1.add(length2);
+        Length expected = new Length(0.03, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
 }

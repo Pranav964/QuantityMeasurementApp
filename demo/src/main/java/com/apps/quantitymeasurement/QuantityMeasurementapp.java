@@ -70,6 +70,17 @@ public class QuantityMeasurementApp {
         Length tempLength = new Length(value, fromUnit);
         return tempLength.convertTo(toUnit);
     }
+    //demonstrate addition of two lengths
+    public static Length demonstrateLengthAddition(Scanner scanner) {
+        Length length1 = readLength(scanner);
+        Length length2 = readLength(scanner);
+
+        System.out.println("Input: Quantity 1: " + length1.getValue() + " " + length1.getUnit().name().toLowerCase() +
+                ", Quantity 2: " + length2.getValue() + " " + length2.getUnit().name().toLowerCase());
+        Length sumLength = length1.add(length2);
+        System.out.println("Output: Sum (" + sumLength.getValue() + " " + sumLength.getUnit().name().toLowerCase() + ")");
+        return sumLength;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -78,6 +89,9 @@ public class QuantityMeasurementApp {
 
             // System.out.println("\nDemonstrating Length Comparison:");
             // demonstrateLengthComparison(scanner);
+            //call method to demonstrate addition of two lengths
+            System.out.println("\nDemonstrating Length Addition:");
+            demonstrateLengthAddition(scanner);
 
             //Demonstrate Length conversion
             System.out.println("\nDemonstrating Length Conversion:");
