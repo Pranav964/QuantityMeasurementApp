@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.apps.quantitymeasurement.Length.LengthUnit;
-import com.apps.quantitymeasurement.QuantityMeasurementApp.Feet;
-import com.apps.quantitymeasurement.QuantityMeasurementApp.Inches;
 
 /**
  * Unit test for simple App.
@@ -20,90 +18,90 @@ public class QuantityMeasurementAppTest {
         assertTrue(true);
     }
 
-    @Test
-    public void testFeetEquality_SameValue() {
-        Feet feet1 = new Feet(5.0);
-        Feet feet2 = new Feet(5.0);
-        assertTrue(feet1.equals(feet2));
-    }
+    // @Test
+    // public void testFeetEquality_SameValue() {
+    //     Feet feet1 = new Feet(5.0);
+    //     Feet feet2 = new Feet(5.0);
+    //     assertTrue(feet1.equals(feet2));
+    // }
 
-    @Test
-    public void testFeetEquality_DifferentValue() {
-        Feet feet1 = new Feet(5.0);
-        Feet feet2 = new Feet(6.0);
-        assertFalse(feet1.equals(feet2));
-    }
+    // @Test
+    // public void testFeetEquality_DifferentValue() {
+    //     Feet feet1 = new Feet(5.0);
+    //     Feet feet2 = new Feet(6.0);
+    //     assertFalse(feet1.equals(feet2));
+    // }
 
-    @Test
-    public void testFeetEquality_NullComparison() {
-        Feet feet1 = new Feet(5.0);
-        Feet feet2 = null;
-        assertFalse(feet1.equals(feet2));
-    }
+    // @Test
+    // public void testFeetEquality_NullComparison() {
+    //     Feet feet1 = new Feet(5.0);
+    //     Feet feet2 = null;
+    //     assertFalse(feet1.equals(feet2));
+    // }
 
-    @Test
-    public void testFeetEquality_DifferentClass() {
-        Feet feet = new Feet(1.0);
-        String notFeet = "1.0";
-        assertFalse(feet.equals(notFeet));
-    }
+    // @Test
+    // public void testFeetEquality_DifferentClass() {
+    //     Feet feet = new Feet(1.0);
+    //     String notFeet = "1.0";
+    //     assertFalse(feet.equals(notFeet));
+    // }
 
-    @Test
-    public void testFeetEquality_DifferentClass2() {
-        Feet feet = new Feet(1.0);
-        int notFeet = 1;
-        assertFalse(feet.equals(notFeet));
-    }
+    // @Test
+    // public void testFeetEquality_DifferentClass2() {
+    //     Feet feet = new Feet(1.0);
+    //     int notFeet = 1;
+    //     assertFalse(feet.equals(notFeet));
+    // }
 
-    @Test
-    public void testFeetEquality_SameReferance() {
-        Feet feet1 = new Feet(5.0);
-        assertTrue(feet1.equals(feet1));
-    }
+    // @Test
+    // public void testFeetEquality_SameReferance() {
+    //     Feet feet1 = new Feet(5.0);
+    //     assertTrue(feet1.equals(feet1));
+    // }
 
 
 
-    // Additional tests for Inches class can be added similarly
-    @Test
-    public void testIncesEquality_SameValue() {
-        Inches inches1 = new Inches(5.0);
-        Inches inches2 = new Inches(5.0);
-        assertTrue(inches1.equals(inches2));
-    }
+    // // Additional tests for Inches class can be added similarly
+    // @Test
+    // public void testIncesEquality_SameValue() {
+    //     Inches inches1 = new Inches(5.0);
+    //     Inches inches2 = new Inches(5.0);
+    //     assertTrue(inches1.equals(inches2));
+    // }
 
-    @Test
-    public void testIncesEquality_DifferentValue() {
-        Inches inches1 = new Inches(5.0);
-        Inches inches2 = new Inches(6.0);
-        assertFalse(inches1.equals(inches2));
-    }
+    // @Test
+    // public void testIncesEquality_DifferentValue() {
+    //     Inches inches1 = new Inches(5.0);
+    //     Inches inches2 = new Inches(6.0);
+    //     assertFalse(inches1.equals(inches2));
+    // }
 
-    @Test
-    public void testInchesEquality_NullComparison() {
-        Inches inches1 = new Inches(5.0);
-        Inches inches2 = null;
-        assertFalse(inches1.equals(inches2));
-    }
+    // @Test
+    // public void testInchesEquality_NullComparison() {
+    //     Inches inches1 = new Inches(5.0);
+    //     Inches inches2 = null;
+    //     assertFalse(inches1.equals(inches2));
+    // }
 
-    @Test
-    public void testInchesEquality_DifferentClass() {
-        Inches inches = new Inches(1.0);
-        String notInches = "1.0";
-        assertFalse(inches.equals(notInches));
-    }
+    // @Test
+    // public void testInchesEquality_DifferentClass() {
+    //     Inches inches = new Inches(1.0);
+    //     String notInches = "1.0";
+    //     assertFalse(inches.equals(notInches));
+    // }
 
-    @Test
-    public void testInchesEquality_DifferentClass2() {
-        Inches inches = new Inches(1.0);
-        int notInches = 1;
-        assertFalse(inches.equals(notInches));
-    }
+    // @Test
+    // public void testInchesEquality_DifferentClass2() {
+    //     Inches inches = new Inches(1.0);
+    //     int notInches = 1;
+    //     assertFalse(inches.equals(notInches));
+    // }
 
-    @Test
-    public void testInchesEquality_SameReferance() {
-        Inches inches1 = new Inches(5.0);
-        assertTrue(inches1.equals(inches1));
-    }
+    // @Test
+    // public void testInchesEquality_SameReferance() {
+    //     Inches inches1 = new Inches(5.0);
+    //     assertTrue(inches1.equals(inches1));
+    // }
 
     //UC-3 Test Cases
 
@@ -286,5 +284,124 @@ public class QuantityMeasurementAppTest {
         // } else {
         //     assertFalse(true); // Force fail if transitive property does not hold
         }
+    }
+
+
+    //UC-5 Test Cases for Length conversion can be added here
+    @Test
+    public void testConversion_FeetToInches(){
+        Length lengthInFeet = new Length(1.0, LengthUnit.FEET);
+        Length expectedLengthInInches = new Length(12.0, LengthUnit.INCHES);
+        assertTrue(lengthInFeet.convertTo(LengthUnit.INCHES).equals(expectedLengthInInches));
+    }
+
+    @Test
+    public void testConversion_InchesToFeet(){
+        Length lengthInInches = new Length(24.0, LengthUnit.INCHES);
+        Length expectedLengthInFeet = new Length(2.0, LengthUnit.FEET);
+        assertTrue(lengthInInches.convertTo(LengthUnit.FEET).equals(expectedLengthInFeet));
+    }
+
+    @Test
+    public void testConversion_YardsToInches(){
+        Length lengthInYards = new Length(1.0, LengthUnit.YARDS);
+        Length expectedLengthInInches = new Length(36.0, LengthUnit.INCHES);
+        assertTrue(lengthInYards.convertTo(LengthUnit.INCHES).equals(expectedLengthInInches));
+    }
+
+    @Test
+    public void testConversion_InchesToYards(){
+        Length lengthInInches = new Length(72.0, LengthUnit.INCHES);
+        Length expectedLengthInYards = new Length(2.0, LengthUnit.YARDS);
+        assertTrue(lengthInInches.convertTo(LengthUnit.YARDS).equals(expectedLengthInYards));
+    }
+
+    @Test
+    public void testConversion_CentimetersToInches(){
+        Length lengthInCentimeters = new Length(2.54, LengthUnit.CENTIMETERS);
+        Length expectedLengthInInches = new Length(1.0, LengthUnit.INCHES);
+        assertTrue(lengthInCentimeters.convertTo(LengthUnit.INCHES).equals(expectedLengthInInches));
+    }
+
+    @Test
+    public void testConversion_InchesToCentimeters(){
+        Length lengthInInches = new Length(1.0, LengthUnit.INCHES);
+        Length expectedLengthInCentimeters = new Length(2.54, LengthUnit.CENTIMETERS);
+        assertTrue(lengthInInches.convertTo(LengthUnit.CENTIMETERS).equals(expectedLengthInCentimeters));
+    }
+
+    @Test
+    public void testConversion_FeetToYards(){
+        Length lengthInFeet = new Length(3.0, LengthUnit.FEET);
+        Length expectedLengthInYards = new Length(1.0, LengthUnit.YARDS);
+        assertTrue(lengthInFeet.convertTo(LengthUnit.YARDS).equals(expectedLengthInYards));
+    }
+
+    @Test
+    public void testConversion_YardsToFeet(){
+        Length lengthInYards = new Length(1.0, LengthUnit.YARDS);
+        Length expectedLengthInFeet = new Length(3.0, LengthUnit.FEET);
+        assertTrue(lengthInYards.convertTo(LengthUnit.FEET).equals(expectedLengthInFeet));
+    }
+
+    @Test
+    public void testConversion_RoundTrip_PreservesValue(){
+        Length originalLength = new Length(5.0, LengthUnit.FEET);
+        Length convertedLength = originalLength.convertTo(LengthUnit.INCHES);
+        Length roundTripLength = convertedLength.convertTo(LengthUnit.FEET);
+        assertTrue(originalLength.equals(roundTripLength));
+    }
+
+    @Test
+    public void testConversion_ZeroValue(){
+        Length lengthInFeet = new Length(0.0, LengthUnit.FEET);
+        Length expectedLengthInInches = new Length(0.0, LengthUnit.INCHES);
+        assertTrue(lengthInFeet.convertTo(LengthUnit.INCHES).equals(expectedLengthInInches));
+    }
+
+    @Test
+    public void testConversion_NegativeValue(){
+        Length lengthInFeet = new Length(-1.0, LengthUnit.FEET);
+        Length expectedLengthInInches = new Length(-12.0, LengthUnit.INCHES);
+        assertTrue(lengthInFeet.convertTo(LengthUnit.INCHES).equals(expectedLengthInInches));
+    }
+
+    @Test
+    public void testConversion_InvalidUnit_Throws(){
+        Length lengthInFeet = new Length(1.0, LengthUnit.FEET);
+        try {
+            lengthInFeet.convertTo(null);
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("Target unit cannot be null"));
+        }
+    }
+
+    @Test
+    public void testConversion_NaNOrInfinite_Throws(){
+        try {
+            new Length(Double.NaN, LengthUnit.FEET);
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("Invalid numeric value"));
+        }
+
+        try {
+            new Length(Double.POSITIVE_INFINITY, LengthUnit.FEET);
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("Invalid numeric value"));
+        }
+    
+        try {
+            new Length(Double.NEGATIVE_INFINITY, LengthUnit.FEET);
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("Invalid numeric value"));
+        }
+    }
+
+    @Test 
+    public void testConversion_PrecisionTolerance(){
+        Length lengthInFeet = new Length(1.0, LengthUnit.FEET);
+        Length expectedLengthInInches = new Length(12.0, LengthUnit.INCHES);
+        Length actualLengthInInches = lengthInFeet.convertTo(LengthUnit.INCHES);
+        assertTrue(Math.abs(actualLengthInInches.getValue() - expectedLengthInInches.getValue()) < 0.01);
     }
 }

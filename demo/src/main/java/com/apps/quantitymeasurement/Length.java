@@ -43,6 +43,27 @@ public class Length {
         return this.value * this.unit.getConversionFactor();
     }
 
+    //round to 2 decimal places
+    private static double round (double value)
+    {
+        return Math.round(value * 100.0) / 100.0;
+    }
+
+    //Method to convert Length to another unit
+    public Length convertTo(LengthUnit targetUnit)
+    {
+        if(targetUnit == null)
+        {
+            throw new IllegalArgumentException("Target unit cannot be null");
+        }
+        double valueInBaseUnit = this.convertToBaseUnit();
+        double convertedValue = valueInBaseUnit / targetUnit.getConversionFactor();
+        return new Length(round(convertedValue), targetUnit);
+    }
+
+
+    //Equality comparison method
+
     public boolean compare(Length thatLength)
     {
         if(thatLength == null)
@@ -74,6 +95,11 @@ public class Length {
         return Double.hashCode(this.convertToBaseUnit());
     }
 
+    @Override
+    public String toString() {
+        return String.format("%.2f %s", value, unit.name());
+    }
+
     public double getValue() {
         return value;
     }
@@ -101,10 +127,11 @@ public class Length {
     //     System.out.println("Are lengths equal? " + l7.compare(l8));
 
 
-    //     Length l9 = new Length(1, LengthUnit.YARDS);
+    //     Length l9 = new Length(1, LengthUnit.FEET);
+    //     System.out.println("Converted: " + l9.convertTo(LengthUnit.CENTIMETERS));
     //     Length l10 = new Length(91.44, LengthUnit.CENTIMETERS);
     //     System.out.println("Are lengths equal? " + l9.compare(l10));
 
         
     // }
-}
+}   
