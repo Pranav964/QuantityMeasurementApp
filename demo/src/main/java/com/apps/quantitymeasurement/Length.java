@@ -106,7 +106,7 @@ public class Length {
     public LengthUnit getUnit() {
         return unit;
     }
-     //UC4
+     //UC6
     //METHOD TO ADD TWO LENGTHS and return result in specified unit of first length
     public Length add(Length thatLength)
     {
@@ -117,6 +117,23 @@ public class Length {
         double sumInBaseUnit = this.convertToBaseUnit() + thatLength.convertToBaseUnit();
         double sumInThisUnit = sumInBaseUnit / this.unit.getConversionFactor();
         return new Length(round(sumInThisUnit), this.unit);
+    }
+
+    //UC7
+    //METHOD TO ADD TWO LENGTHS and return result in specified target unit
+    public Length add(Length thatLength, LengthUnit targetUnit)
+    {
+        if(thatLength == null)
+        {
+            throw new IllegalArgumentException("Cannot add null Length");
+        }
+        if(targetUnit == null)
+        {
+            throw new IllegalArgumentException("Target unit cannot be null");
+        }
+        double sumInBaseUnit = this.convertToBaseUnit() + thatLength.convertToBaseUnit();
+        double sumInTargetUnit = sumInBaseUnit / targetUnit.getConversionFactor();
+        return new Length(round(sumInTargetUnit), targetUnit);
     }
 
 
