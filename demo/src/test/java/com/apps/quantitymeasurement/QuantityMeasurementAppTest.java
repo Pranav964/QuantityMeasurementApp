@@ -581,4 +581,266 @@ public class QuantityMeasurementAppTest {
         Length expected = new Length(0.03, LengthUnit.FEET);
         assertTrue(result.equals(expected));
     }
+
+    //UC-7 Test Cases for Addition with Target Unit Specification
+    
+    @Test
+    public void testAdditionWithTargetUnit_FeetPlusInches_ToYards() {
+        Length lengthInFeet = new Length(1.0, LengthUnit.FEET);
+        Length lengthInInches = new Length(12.0, LengthUnit.INCHES);
+        Length result = lengthInFeet.add(lengthInInches, LengthUnit.YARDS);
+        Length expected = new Length(0.67, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_InchPlusInch_ToFeet() {
+        Length length1 = new Length(6.0, LengthUnit.INCHES);
+        Length length2 = new Length(6.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.FEET);
+        Length expected = new Length(1.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_FeetPlusFeet_ToInches() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(2.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.INCHES);
+        Length expected = new Length(36.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_YardsPlusInches_ToFeet() {
+        Length lengthInYards = new Length(1.0, LengthUnit.YARDS);
+        Length lengthInInches = new Length(12.0, LengthUnit.INCHES);
+        Length result = lengthInYards.add(lengthInInches, LengthUnit.FEET);
+        Length expected = new Length(4.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_InchPlusYards_ToInches() {
+        Length lengthInInches = new Length(24.0, LengthUnit.INCHES);
+        Length lengthInYards = new Length(1.0, LengthUnit.YARDS);
+        Length result = lengthInInches.add(lengthInYards, LengthUnit.INCHES);
+        Length expected = new Length(60.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_SameUnit_ToSameUnit() {
+        Length length1 = new Length(5.0, LengthUnit.FEET);
+        Length length2 = new Length(3.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.FEET);
+        Length expected = new Length(8.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_Commutativity() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        
+        Length result1 = length1.add(length2, LengthUnit.YARDS);
+        Length result2 = length2.add(length1, LengthUnit.YARDS);
+        
+        assertTrue(result1.equals(result2));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAdditionWithTargetUnit_NullTargetUnit() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(1.0, LengthUnit.INCHES);
+        length1.add(length2, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAdditionWithTargetUnit_NullLength() {
+        Length length = new Length(5.0, LengthUnit.FEET);
+        length.add(null, LengthUnit.YARDS);
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_LargeValues_ToYards() {
+        Length length1 = new Length(1000.0, LengthUnit.FEET);
+        Length length2 = new Length(500.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.YARDS);
+        Length expected = new Length(500.0, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_FeetPlusCentimeters_ToInches() {
+        Length lengthInFeet = new Length(1.0, LengthUnit.FEET);
+        Length lengthInCm = new Length(2.54, LengthUnit.CENTIMETERS);
+        Length result = lengthInFeet.add(lengthInCm, LengthUnit.INCHES);
+        Length expected = new Length(13.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAdditionWithTargetUnit_Precision_DecimalResult() {
+        Length length1 = new Length(1.5, LengthUnit.FEET);
+        Length length2 = new Length(6.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.YARDS);
+        Length expected = new Length(0.67, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    // UC-7 Additional Comprehensive Test Cases
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_Feet() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.FEET);
+        Length expected = new Length(2.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_Inches() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.INCHES);
+        Length expected = new Length(24.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_Yards() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.YARDS);
+        Length expected = new Length(0.67, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_Centimeters() {
+        Length length1 = new Length(1.0, LengthUnit.INCHES);
+        Length length2 = new Length(1.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.CENTIMETERS);
+        Length expected = new Length(5.08, LengthUnit.CENTIMETERS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_SameAsFirstOperand() {
+        Length length1 = new Length(2.0, LengthUnit.YARDS);
+        Length length2 = new Length(3.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.YARDS);
+        Length expected = new Length(3.0, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_SameAsSecondOperand() {
+        Length length1 = new Length(2.0, LengthUnit.YARDS);
+        Length length2 = new Length(3.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.FEET);
+        Length expected = new Length(9.0, LengthUnit.FEET);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_Commutativity() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        
+        Length result1 = length1.add(length2, LengthUnit.YARDS);
+        Length result2 = length2.add(length1, LengthUnit.YARDS);
+        
+        assertTrue(result1.equals(result2));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_WithZero() {
+        Length length1 = new Length(5.0, LengthUnit.FEET);
+        Length length2 = new Length(0.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.YARDS);
+        Length expected = new Length(1.67, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_NegativeValues() {
+        Length length1 = new Length(5.0, LengthUnit.FEET);
+        Length length2 = new Length(-2.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.INCHES);
+        Length expected = new Length(36.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddition_ExplicitTargetUnit_NullTargetUnit() {
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        length1.add(length2, null);
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_LargeToSmallScale() {
+        Length length1 = new Length(1000.0, LengthUnit.FEET);
+        Length length2 = new Length(500.0, LengthUnit.FEET);
+        Length result = length1.add(length2, LengthUnit.INCHES);
+        Length expected = new Length(18000.0, LengthUnit.INCHES);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_SmallToLargeScale() {
+        Length length1 = new Length(12.0, LengthUnit.INCHES);
+        Length length2 = new Length(12.0, LengthUnit.INCHES);
+        Length result = length1.add(length2, LengthUnit.YARDS);
+        Length expected = new Length(0.67, LengthUnit.YARDS);
+        assertTrue(result.equals(expected));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_AllUnitCombinations() {
+        // Test FEET + INCHES -> YARDS
+        Length f1 = new Length(3.0, LengthUnit.FEET);
+        Length i1 = new Length(36.0, LengthUnit.INCHES);
+        Length r1 = f1.add(i1, LengthUnit.YARDS);
+        Length e1 = new Length(2.0, LengthUnit.YARDS);
+        assertTrue(r1.equals(e1));
+
+        // Test YARDS + FEET -> INCHES
+        Length y1 = new Length(1.0, LengthUnit.YARDS);
+        Length f2 = new Length(1.0, LengthUnit.FEET);
+        Length r2 = y1.add(f2, LengthUnit.INCHES);
+        Length e2 = new Length(48.0, LengthUnit.INCHES);
+        assertTrue(r2.equals(e2));
+
+        // Test INCHES + CENTIMETERS -> FEET
+        Length in1 = new Length(12.0, LengthUnit.INCHES);
+        Length cm1 = new Length(30.48, LengthUnit.CENTIMETERS);
+        Length r3 = in1.add(cm1, LengthUnit.FEET);
+        Length e3 = new Length(2.0, LengthUnit.FEET);
+        assertTrue(r3.equals(e3));
+    }
+
+    @Test
+    public void testAddition_ExplicitTargetUnit_PrecisionTolerance() {
+        // Test 1: 1 FEET + 6 INCHES -> YARDS
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(6.0, LengthUnit.INCHES);
+        Length result1 = length1.add(length2, LengthUnit.YARDS);
+        assertTrue(Math.abs(result1.getValue() - 0.5) < 0.01);
+
+        // Test 2: 1 YARD + 18 INCHES -> FEET
+        Length length3 = new Length(1.0, LengthUnit.YARDS);
+        Length length4 = new Length(18.0, LengthUnit.INCHES);
+        Length result2 = length3.add(length4, LengthUnit.FEET);
+        assertTrue(Math.abs(result2.getValue() - 4.5) < 0.01);
+
+        // Test 3: 30.48 CM + 30.48 CM -> FEET
+        Length length5 = new Length(30.48, LengthUnit.CENTIMETERS);
+        Length length6 = new Length(30.48, LengthUnit.CENTIMETERS);
+        Length result3 = length5.add(length6, LengthUnit.FEET);
+        assertTrue(Math.abs(result3.getValue() - 2.0) < 0.01);
+    }
 }

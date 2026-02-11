@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.066" tests="58" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.099" tests="84" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -12,10 +12,10 @@
     <property name="user.timezone" value="Asia/Calcutta"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="22"/>
-    <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\jdk-22.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\PR2055~1\AppData\Local\Temp\surefire5784659392073769403\surefirebooter2505776134276528688.jar C:\Users\PR20552518\AppData\Local\Temp\surefire5784659392073769403 2026-02-11T14-58-21_202-jvmRun1 surefire12043439292955681062tmp surefire_09058612565033696553tmp"/>
+    <property name="sun.java.command" value="C:\Users\PR2055~1\AppData\Local\Temp\surefire12956180803372487122\surefirebooter370054347745594611.jar C:\Users\PR20552518\AppData\Local\Temp\surefire12956180803372487122 2026-02-11T16-14-21_370-jvmRun1 surefire14618861759495427534tmp surefire_08859403871846034514tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\PR20552518\Desktop\QuanittyMeasurementApp\demo\target\test-classes;C:\Users\PR20552518\Desktop\QuanittyMeasurementApp\demo\target\classes;C:\Users\PR20552518\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\PR20552518\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\PR2055~1\AppData\Local\Temp\surefire5784659392073769403\surefirebooter2505776134276528688.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\PR2055~1\AppData\Local\Temp\surefire12956180803372487122\surefirebooter370054347745594611.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -41,7 +41,6 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="C:\Users\PR20552518\.vscode\extensions\oracle.oracle-java-25.0.1\nbcode\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="localRepository" value="C:\Users\PR20552518\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\PR2055~1\AppData\Local\Temp\"/>
@@ -51,7 +50,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\jdk-22.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;%JAVA-HOME%\bin;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.9.6\bin;C:\Program Files\jdk-22.0.1\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\PR20552518\AppData\Local\Microsoft\WindowsApps;C:\Users\PR20552518\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\PR20552518\AppData\Roaming\npm;C:\Git\Git\cmd;."/>
+    <property name="java.library.path" value="C:\Program Files\jdk-22.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\PR20552518\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\PR20552518\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;%JAVA-HOME%\bin;C:\Program Files\nodejs;C:\Program Files\apache-maven-3.9.6\bin;C:\Program Files\jdk-22.0.1\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\PR20552518\AppData\Local\Microsoft\WindowsApps;C:\Users\PR20552518\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\PR20552518\AppData\Roaming\npm;C:\Git\Git\cmd;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -59,62 +58,88 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testAddition_InvalidValue_LargeResult" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.005"/>
+  <testcase name="testAddition_ExplicitTargetUnit_SameAsFirstOperand" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.007"/>
+  <testcase name="testAddition_InvalidValue_LargeResult" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_FeetToYards" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_YardToFeet_NonEquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_FeetPlusInches_ToYards" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_YardToFeet_NonEquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testEquality_CentimetersToInches_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_FeetToYard_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_FeetToYard_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAddition_ExplicitTargetUnit_Feet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_ResultPrecision_DecimalValues" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_SmallToLargeScale" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_FeetPlusFeet_ToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_PrecisionTolerance" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_InchToInch_SameValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_Commutativity" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_InchToInch_SameValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAddition_ExplicitTargetUnit_NullTargetUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_AllUnits_ComplexScenario" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_CentimetersNullComparison" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAdditionWithTargetUnit_Precision_DecimalResult" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_CentimetersNullComparison" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="shouldAnswerWithTrue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_LargeToSmallScale" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_InvalidUnit_Throws" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_NullTargetUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_FeetInchesComparison" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testConversion_ZeroValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_CentimetersSameReference" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAddition_ExplicitTargetUnit_PrecisionTolerance" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_CentimetersSameReference" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_UnitConsistency_ResultInFirstUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_CrossUnit_InchesPlusFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_YardWithNullUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_YardToInches_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testConversion_NegativeValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testConversion_NegativeValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testAddition_ResultPrecision_CrossUnitDecimal" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testAddition_IdentityElement_InchPlusZero" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_IdentityElement_InchPlusZero" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAddition_ExplicitTargetUnit_WithZero" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_UnitConsistency_SameUnitPreserved" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_SameUnit_InchPlusInch" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_YardToFeet_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAdditionWithTargetUnit_InchPlusYards_ToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_CentimetersWithNullUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testAddition_CrossUnit_FeetPlusInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_Centimeters" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_NullLength" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_CrossUnit_FeetPlusInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testConversion_RoundTrip_PreservesValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_Commutativity_SameUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_CentimetersToFeet_NonEquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_InchesToCentimeters" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_InchesToYard_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_InchesToYard_EquivalentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testEquality_YardSameReference" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_Commutativity_FeetAndInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_NullHandling_AddNullLength" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testAddition_VerySmallValues_Precision" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_Commutativity" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_VerySmallValues_Precision" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testAddition_LargeValues_FeetAddition" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_FeetToFeet_SameValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_YardsPlusInches_ToFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_YardsToFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_YardToYard_SameValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_YardToYard_DifferentValue" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_Inches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testConversion_FeetToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_MultiUnit_TransitiveProperty" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testEquality_YardNullComparison" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
-  <testcase name="testConversion_InchesToYards" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_YardNullComparison" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_AllUnitCombinations" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAdditionWithTargetUnit_LargeValues_ToYards" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_SameUnit_ToSameUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_Yards" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testConversion_InchesToYards" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testEquality_FeetIneuality" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_NullComparison" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_LargeAndSmall_CrossUnit" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAdditionWithTargetUnit_InchPlusInch_ToFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
+  <testcase name="testAdditionWithTargetUnit_FeetPlusCentimeters_ToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_InchesToFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testAddition_IdentityElement_FeetPlusZero" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
-  <testcase name="testEquality_CrossUnitInequality" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_IdentityElement_FeetPlusZero" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testEquality_CrossUnitInequality" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
   <testcase name="testAddition_SameUnit_FeetPlusFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_CentimetersToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_NegativeValues" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_ExplicitTargetUnit_SameAsSecondOperand" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testConversion_NaNOrInfinite_Throws" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testEquality_InchesIneuality" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
   <testcase name="testAddition_IdentityElement_ZeroPlusFeet" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
-  <testcase name="testAddition_SmallValues_InchAddition" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.002"/>
-  <testcase name="testConversion_YardsToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testAddition_SmallValues_InchAddition" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0"/>
+  <testcase name="testConversion_YardsToInches" classname="com.apps.quantitymeasurement.QuantityMeasurementAppTest" time="0.001"/>
 </testsuite>

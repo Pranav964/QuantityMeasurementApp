@@ -82,6 +82,37 @@ public class QuantityMeasurementApp {
         return sumLength;
     }
 
+    // Method demonstratateLengthConversion with length Length.LengthUnit toUnit and return converted length
+    //public static Length demonstrateLengthConversion(Length length, Length.LengthUnit toUnit) {
+
+       // return length.convertTo(toUnit);
+
+   // }
+
+    //UC7 - Method to demonstrate addition with target unit specification
+    public static Length demonstrateLengthAdditionWithTargetUnit(Scanner scanner) {
+        Length length1 = readLength(scanner);
+        Length length2 = readLength(scanner);
+        
+        System.out.print("Enter target unit for result (INCHES, FEET, YARDS, CENTIMETERS): ");
+        String targetUnitInput = scanner.next().toUpperCase();
+        LengthUnit targetUnit;
+        try {
+            targetUnit = LengthUnit.valueOf(targetUnitInput);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid target unit");
+        }
+
+        System.out.println("Input: Quantity 1: " + length1.getValue() + " " + length1.getUnit().name().toLowerCase() +
+                ", Quantity 2: " + length2.getValue() + " " + length2.getUnit().name().toLowerCase() +
+                ", Target Unit: " + targetUnit.name().toLowerCase());
+        
+        Length sumLength = length1.add(length2, targetUnit);
+        System.out.println("Output: Sum (" + sumLength.getValue() + " " + sumLength.getUnit().name().toLowerCase() + ")");
+        return sumLength;
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try (scanner) {
@@ -93,10 +124,15 @@ public class QuantityMeasurementApp {
             System.out.println("\nDemonstrating Length Addition:");
             demonstrateLengthAddition(scanner);
 
+            //CALL METHOD TO DEMONSTRATE ADDITION WITH TARGET UNIT SPECIFICATION
+            System.out.println("\nDemonstrating Length Addition with Target Unit Specification:");
+            demonstrateLengthAdditionWithTargetUnit(scanner);
+            
+
             //Demonstrate Length conversion
-            System.out.println("\nDemonstrating Length Conversion:");
-            Length convertedLength = demonstrateLengthConversion(scanner);
-            System.out.println("Converted Length: " + convertedLength.getValue() + " " + convertedLength.getUnit().name().toLowerCase());
+           // System.out.println("\nDemonstrating Length Conversion:");
+            //Length convertedLength = demonstrateLengthConversion(scanner);
+            //System.out.println("Converted Length: " + convertedLength.getValue() + " " + convertedLength.getUnit().name().toLowerCase());
         } finally {
             scanner.close();
         }
