@@ -10,60 +10,6 @@ import com.apps.quantitymeasurement.Length.LengthUnit;
  */
 public class QuantityMeasurementApp {
     // Inner class to represent Feet measurement
-    public static class Feet {
-
-        private final double value;
-
-        public Feet(double value) {
-            this.value = value;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-
-            if (this == obj)
-                return true;
-
-            if (obj == null || getClass() != obj.getClass())
-                return false;
-
-            Feet other = (Feet) obj;
-
-            return Double.compare(this.value, other.value) == 0;
-        }
-
-        @Override
-        public int hashCode() {
-            return Double.hashCode(value);
-        }
-    }
-
-    public static class Inches {
-        private final double value;
-
-        public Inches(double value) {
-            this.value = value;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-
-            if (this == obj)
-                return true;
-
-            if (obj == null || getClass() != obj.getClass())
-                return false;
-
-            Inches other = (Inches) obj;
-
-            return Double.compare(this.value, other.value) == 0;
-        }
-
-        @Override
-        public int hashCode() {
-            return Double.hashCode(value);
-        }
-    }
 
     // Length equality demonstration
     public static boolean demonstrateLengthEquality(Length length1, Length length2) {
@@ -99,13 +45,44 @@ public class QuantityMeasurementApp {
         System.out.println("\nOutput: Equal (" + demonstrateLengthEquality(length1, length2) + ")");
     }
 
+    public static Length demonstrateLengthConversion(Scanner scanner) {
+        System.out.print("Enter length value: ");
+        double value = scanner.nextDouble();
+
+        System.out.print("Enter length unit (INCHES, FEET, YARDS, CENTIMETERS): ");
+        String fromUnitInput = scanner.next().toUpperCase();
+        LengthUnit fromUnit;
+        try {
+            fromUnit = LengthUnit.valueOf(fromUnitInput);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid length unit");
+        }
+
+        System.out.print("Enter target length unit (INCHES, FEET, YARDS, CENTIMETERS): ");
+        String toUnitInput = scanner.next().toUpperCase();
+        LengthUnit toUnit;
+        try {
+            toUnit = LengthUnit.valueOf(toUnitInput);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid length unit");
+        }
+
+        Length tempLength = new Length(value, fromUnit);
+        return tempLength.convertTo(toUnit);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try (scanner) {
             //Demonstrate Length comparison
 
-            System.out.println("\nDemonstrating Length Comparison:");
-            demonstrateLengthComparison(scanner);
+            // System.out.println("\nDemonstrating Length Comparison:");
+            // demonstrateLengthComparison(scanner);
+
+            //Demonstrate Length conversion
+            System.out.println("\nDemonstrating Length Conversion:");
+            Length convertedLength = demonstrateLengthConversion(scanner);
+            System.out.println("Converted Length: " + convertedLength.getValue() + " " + convertedLength.getUnit().name().toLowerCase());
         } finally {
             scanner.close();
         }
