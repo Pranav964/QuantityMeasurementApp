@@ -1,2 +1,5 @@
-com\apps\quantitymeasurement\Length$LengthUnit.class
+com\apps\quantitymeasurement\NonRep.class
+com\apps\quantitymeasurement\QuantityMeasurementApp$Example.class
 com\apps\quantitymeasurement\Length.class
+com\apps\quantitymeasurement\QuantityMeasurementApp.class
+com\apps\quantitymeasurement\LengthUnit.class

@@ -1,26 +1,20 @@
 package com.apps.quantitymeasurement;
 
+//UC8: LengthUnit extracted to standalone class (not nested anymore)
+/**
+ * Length class - Refactored in UC8 to simplify by delegating unit conversion logic.
+ * 
+ * UC8 Refactoring:
+ * - LengthUnit enum extracted to standalone class (reduces coupling, improves cohesion)
+ * - Length now focuses on value comparison and arithmetic operations
+ * - Conversion logic delegated to LengthUnit class
+ * 
+ * Maintains backward compatibility: All public APIs unchanged
+ */
 public class Length {
     private final double value;
     private final LengthUnit unit;
     private static final double EPSILON = 0.0001;  // Tolerance for floating-point comparison
-
-    public enum LengthUnit {
-        FEET(12.0),
-        INCHES(1.0),
-        YARDS(36.0),
-        CENTIMETERS(0.393701);  // 1 cm = 0.393701 inches
-
-        private final double conversionFactor;
-
-        LengthUnit(double conversionFactor) {
-            this.conversionFactor = conversionFactor;
-        }
-
-        public double getConversionFactor() {
-            return conversionFactor;
-        }
-    }
 
     // Constructor
     public Length(double value, LengthUnit unit)
@@ -37,19 +31,21 @@ public class Length {
         this.unit = unit;
     }
 
-    //convet to base unit inches
+    //convert to base unit inches
+    //UC8: Delegated to LengthUnit for centralized conversion logic
     private double convertToBaseUnit()
     {
-        return this.value * this.unit.getConversionFactor();
+        return this.unit.convertToBaseUnit(this.value);
     }
 
-    //round to 2 decimal places
+    //round to 4 decimal places
     private static double round (double value)
     {
-        return Math.round(value * 100.0) / 100.0;
+        return Math.round(value * 10000.0) / 10000.0;
     }
 
     //Method to convert Length to another unit
+    //UC8: Using delegated unit conversion methods for consistency
     public Length convertTo(LengthUnit targetUnit)
     {
         if(targetUnit == null)
@@ -57,7 +53,7 @@ public class Length {
             throw new IllegalArgumentException("Target unit cannot be null");
         }
         double valueInBaseUnit = this.convertToBaseUnit();
-        double convertedValue = valueInBaseUnit / targetUnit.getConversionFactor();
+        double convertedValue = targetUnit.convertFromBaseUnit(valueInBaseUnit);
         return new Length(round(convertedValue), targetUnit);
     }
 
@@ -106,8 +102,9 @@ public class Length {
     public LengthUnit getUnit() {
         return unit;
     }
-     //UC6
+    //UC6
     //METHOD TO ADD TWO LENGTHS and return result in specified unit of first length
+    //UC8: Using delegated unit conversion methods
     public Length add(Length thatLength)
     {
         if(thatLength == null)
@@ -115,12 +112,13 @@ public class Length {
             throw new IllegalArgumentException("Cannot add null Length");
         }
         double sumInBaseUnit = this.convertToBaseUnit() + thatLength.convertToBaseUnit();
-        double sumInThisUnit = sumInBaseUnit / this.unit.getConversionFactor();
+        double sumInThisUnit = this.unit.convertFromBaseUnit(sumInBaseUnit);
         return new Length(round(sumInThisUnit), this.unit);
     }
 
     //UC7
     //METHOD TO ADD TWO LENGTHS and return result in specified target unit
+    //UC8: Using delegated unit conversion methods
     public Length add(Length thatLength, LengthUnit targetUnit)
     {
         if(thatLength == null)
@@ -132,9 +130,11 @@ public class Length {
             throw new IllegalArgumentException("Target unit cannot be null");
         }
         double sumInBaseUnit = this.convertToBaseUnit() + thatLength.convertToBaseUnit();
-        double sumInTargetUnit = sumInBaseUnit / targetUnit.getConversionFactor();
+        double sumInTargetUnit = targetUnit.convertFromBaseUnit(sumInBaseUnit);
         return new Length(round(sumInTargetUnit), targetUnit);
     }
+
+    
 
 
     //standalone testing
